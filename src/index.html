@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="google-signin-client_id" content="93471052432-3t1vht46an9rv3pjd6f7a9ufmdus92j8.apps.googleusercontent.com">
+
+  <title>My-Test-App</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</head>
+<body>
+  <app-root></app-root>
+  <script type="text/javascript">
+  	 
+
+
+  	function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+        document.getElementById("user-image").src=profile.getImageUrl();
+        document.getElementById("user-image").className="";
+	    var parent = document.getElementById("login-elemnet-holder");
+		var child = document.getElementById("google-login");
+		parent.removeChild(child);
+    }
+
+   function singOut() {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+        document.getElementById("user-image").src=profile.getImageUrl();
+        document.getElementById("user-image").className="";
+	    var parent = document.getElementById("login-elemnet-holder");
+		var child = document.getElementById("google-login");
+		parent.removeChild(child);
+    }
+
+  </script>
+</body>
+</html>
+
+
